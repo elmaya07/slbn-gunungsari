@@ -41,11 +41,11 @@
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
     <!-- LOADER -->
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="loader">
             <img src="{{asset('templates/images/loader.gif')}}" alt="#" />
         </div>
-    </div>
+    </div> --}}
     <!-- end loader -->
     <!-- END LOADER -->
 
@@ -232,13 +232,18 @@
                         <div class="heading_main text_align_left">
 						   <h2 style="margin: 0;padding:0x"><span>Visi dan Misi</h2>
                         </div>
-						<div class="full" style="padding: 0px">
-						  <p>
-                            Visi dari SLBN Gunungsari adalah untuk menjadi sekolah unggulan yang mampu menciptakan lingkungan belajar yang ramah dan mendukung bagi siswa dengan kebutuhan khusus, serta memberikan kesempatan bagi mereka untuk berkembang secara maksimal.
-                            Misi sekolah ini meliputi:
-                            Menyediakan pendidikan yang sesuai dengan kemampuan dan kebutuhan setiap siswa.
-                            Menciptakan lingkungan yang inklusif, aman, dan nyaman bagi siswa dengan disabilitas.
-                           .</p>
+						<div class="full" style="padding: 20px 0px">
+                            <h2>Visi</h2>
+                            <p>Mewujudkan Peserta Didik yang Mandiri, Terampil, Cerda, dan Berwawasan Global</p>
+
+                            <h2>Misi</h2>
+                            <ol>
+                                <li>Mewujudkan lulusan yang unggul dalam bidang keterampilan Vokasional.</li>
+                                <li>Membina kemandirian peserta didik melalui kegiatan pembiasaan, kewirausahaan, dan pengembangan diri yang terencana dan berkesinambungan.</li>
+                                <li>Mengoptimalkan proses pembelajaran dan bimbingan.</li>
+                                <li>Mewujudkan pendidikan yang mengedepankan pendidikan profil pelajar Pancasila.</li>
+                                <li>Menjaga kerjasama yang harmonis antar warga sekolah dan lembaga lain yang terkait.</li>
+                            </ol>
 						</div>
 						<div class="full">
 						   {{-- <a class="hvr-radial-out button-theme" href="#">Apply</a> --}}
@@ -308,7 +313,7 @@
                                         <div class="full blog_img_popular">
                                             <img class="img-responsive" src="{{asset('gambar/kegiatan-12.png')}}" alt="#" />
 										  <h4>Pentas Seni</h4>
-										  <p>Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+										  <p>Pentas seni sekolah adalah acara kreatif dan budaya yang menampilkan beragam talenta siswa dalam berbagai bentuk seni. Acara ini biasanya menjadi wadah ekspresi dan apresiasi terhadap seni musik, tari, teater, dan seni rupa.</p>
 										</div>
                                     </div>
                                 </div>
@@ -429,12 +434,11 @@
 
 			  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 				 <div class="footer_blog full white_fonts">
-						     <h3>Contact us</h3>
+						     <h3>Kontak kami</h3>
 							 <ul class="full">
 							   <li><img src="{{asset('templates/images/i5.png')}}"><span>London 145<br>United Kingdom</span></li>
 							   <li><img src="{{asset('templates/images/i6.png')}}"><span>demo@gmail.com</span></li>
-							   <li><img src="{{asset('templates/images/i7.png')}}"><span>+12586954775</span></li>
-							 </ul>
+							   <li><img src="{{asset('templates/images/i7.png')}}"><span>+62 822-4400-8932(Ayu)</span></li>
 						 </div>
 					</div>
 
