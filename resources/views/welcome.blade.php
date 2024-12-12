@@ -69,10 +69,10 @@
                     </ul>
                 </div>
                 <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Search">
+                    {{-- <input type="text" class="search-txt" placeholder="Search">
                     <a class="search-btn">
                         <img src="{{asset('templates/images/search_icon.png')}}" alt="#" />
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </nav>
@@ -408,21 +408,21 @@
 
 			  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 			       <div class="footer_blog footer_menu white_fonts">
-						    <h3>Quick links</h3>
+						    {{-- <h3>Quick links</h3>
 						    <ul>
 							  <li><a href="#">> Join Us</a></li>
 							  <li><a href="#">> Maintenance</a></li>
 							  <li><a href="#">> Language Packs</a></li>
 							  <li><a href="#">> LearnPress</a></li>
 							  <li><a href="#">> Release Status</a></li>
-							</ul>
+							</ul> --}}
 						 </div>
 				 </div>
 
 				 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 				 <div class="footer_blog full white_fonts">
-						     <h3>Newsletter</h3>
-							 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+						     <h3>Terbaru</h3>
+							 <p>Dapatkan informasi terbaru dari kami</p>
 							 <div class="newsletter_form">
 							    <form action="index.html">
 								   <input type="email" placeholder="Your Email" name="#" required />
@@ -436,8 +436,8 @@
 				 <div class="footer_blog full white_fonts">
 						     <h3>Kontak kami</h3>
 							 <ul class="full">
-							   <li><img src="{{asset('templates/images/i5.png')}}"><span>London 145<br>United Kingdom</span></li>
-							   <li><img src="{{asset('templates/images/i6.png')}}"><span>demo@gmail.com</span></li>
+							   <li><img src="{{asset('templates/images/i5.png')}}"><span> Jl. Teuku Umar no 344 Desa Pasinan, <br/>Kecamatan Baureno Kabupaten Bojonegoro</span></li>
+							   <li><img src="{{asset('templates/images/i6.png')}}"><span>slbnegerigunungsari@gmail.com</span></li>
 							   <li><img src="{{asset('templates/images/i7.png')}}"><span>+62 822-4400-8932(Ayu)</span></li>
 						 </div>
 					</div>
