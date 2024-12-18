@@ -196,24 +196,22 @@
                         </div>
 					  </div>
                 </div>
-				<div class="col-md-4">
+
+                @if(count($kegiatan)>0)
+
+                @foreach ($kegiatan as $item)
+
+                <div class="col-md-4">
                     <div class="full blog_img_popular">
-                       <img class="img-responsive" src="{{asset('gambar/kegiatan-10.png')}}" alt="#" />
-					   <h4>Acara PKK Ibu-ibu</h4>
+
+                       <img class="img-responsive" src="{{asset('gambar/'.$item['gambar'])}}" style="aspect-ratio:1/1;margin-bottom:10px" alt="#" />
+					 <center>  <b>{{$item['deskripsi']}}</b></center>
                     </div>
                 </div>
-				<div class="col-md-4">
-                    <div class="full blog_img_popular">
-                        <img class="img-responsive" src="{{asset('gambar/kegiatan-11.png')}}" alt="#" />
-						<h4>Acara PKK Ibu-ibu</h4>
-                    </div>
-                </div>
-				<div class="col-md-4">
-                    <div class="full blog_img_popular">
-                        <img class="img-responsive" src="{{asset('gambar/kegiatan-12.png')}}" alt="#" />
-						<h4>Pentas Kesenian</h4>
-                    </div>
-                </div>
+
+                @endforeach
+                @endif
+
             </div>
         </div>
     </div>
@@ -302,20 +300,18 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-									   <div class="full blog_img_popular">
-                                          <img class="img-responsive" src="{{asset('gambar/pawai.png')}}" alt="#" />
-										  <h4>Pawai Hari Disabilitas</h4>
-										  <p>Hari Disabilitas Internasional: Merayakan Keberagaman dan Meningkatkan Kesadaran</p>
-										</div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                  @if (count($blog))
+                                      @foreach ($blog as $item)
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="full blog_img_popular">
-                                            <img class="img-responsive" src="{{asset('gambar/kegiatan-12.png')}}" alt="#" />
-										  <h4>Pentas Seni</h4>
-										  <p>Pentas seni sekolah adalah acara kreatif dan budaya yang menampilkan beragam talenta siswa dalam berbagai bentuk seni. Acara ini biasanya menjadi wadah ekspresi dan apresiasi terhadap seni musik, tari, teater, dan seni rupa.</p>
-										</div>
-                                    </div>
+                                           <img class="img-responsive" src="{{asset('gambar/'.$item['gambar'])}}" style="margin-bottom: 20px" alt="#" />
+                                           <center><b>{{$item['judul']}}</b></center>
+                                           <p>{{$item['deskripsi']}}</p>
+                                         </div>
+                                     </div>
+
+                                      @endforeach
+                                  @endif
                                 </div>
                             </div>
 
