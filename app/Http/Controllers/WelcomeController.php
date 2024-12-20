@@ -24,12 +24,16 @@ class WelcomeController extends Controller
             "gambar"=>"la-4.jpeg"
         ],
         [
-            "deskripsi"=>"Pelaksanaam SAS Semester Ganjil TA 2024/2025",
+            "deskripsi"=>"Kunjungan oleh Pj Sekda Kabupaten Bojonegoro pada Stand Bazar HDI 2024",
             "gambar"=>"la-3.jpeg"
         ],
         [
-            "deskripsi"=>"Pelaksanaam SAS Semester Ganjil TA 2024/2025",
+            "deskripsi"=>"Kunjungan oleh Kabid Jawa Timur pada stand Bazar HDI 2024",
             "gambar"=>"la-5.jpeg"
+        ],
+        [
+            "deskripsi"=>"Pelaksanaam SAS Semester Ganjil TA 2024/2025",
+            "gambar"=>"la-6.jpeg"
         ],
         [
             "deskripsi"=>"Pelaksanaam SAS Semester Ganjil TA 2024/2025",

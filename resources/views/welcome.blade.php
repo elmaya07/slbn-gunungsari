@@ -178,7 +178,7 @@
                 </div>
 				<div class="col-md-6">
                     <div class="full" style="margin-top: 50px">
-                        <img src="{{asset('gambar/kegiatan1.jpg')}}" alt="#" />
+                        <img src="{{asset('gambar/foto-bersama.jpeg')}}" alt="#" />
                     </div>
                 </div>
             </div>
