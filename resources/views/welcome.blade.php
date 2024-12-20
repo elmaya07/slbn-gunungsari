@@ -208,10 +208,8 @@
 					 <center>  <b>{{$item['deskripsi']}}</b></center>
                     </div>
                 </div>
-
                 @endforeach
                 @endif
-
             </div>
         </div>
     </div>
@@ -281,6 +279,91 @@
     </div> --}}
 	<!-- end section -->
 	<!-- section -->
+
+
+    <div class="section layout_padding padding_bottom-0" id="box-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+                           <h2><span>Event </span></h2>
+                        </div>
+					  </div>
+                </div>
+			  </div>
+               <div class="row">
+                <div class="col-lg-12">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                  @if (count($video))
+                                      @foreach ($video as $item)
+                                       @if ($item['type']=="local")
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="full blog_img_popular">
+                                                <video controls  style="margin-bottom: 20px;width:100%">
+                                                    <source src="{{asset('video/'.$item['file'])}}"  type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+
+                                        @endif
+
+                                        @if ($item['type']=="instagram")
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="full blog_img_popular">
+                                             <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="14" style="width: 100%; max-width: 540px;">
+                                                 <a href="{{$item['file']}}" target="_blank"></a>
+                                             </blockquote>
+                                             </div>
+                                         </div>
+                                        @endif
+
+                                        @if ($item['type']=="youtube")
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="full blog_img_popular">
+                                             <iframe
+                                            style="width: 100%"
+                                            height="350"
+                                             src="https://www.youtube.com/embed/{{$item['file']}}"
+                                             title="YouTube video player"
+                                             frameborder="0"
+                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                             allowfullscreen>
+                                         </iframe>
+                                             </div>
+                                         </div>
+                                        @endif
+
+                                     @endforeach
+                                     @endif
+
+                                 x
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+           </div>
+        </div>
+
+
     <div class="section layout_padding padding_bottom-0" id="box-info">
         <div class="container">
             <div class="row">
@@ -314,9 +397,7 @@
                                   @endif
                                 </div>
                             </div>
-
                         </div>
-
                         <!-- Left and right controls -->
                         <a class="carousel-control-prev" href="#demo" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -470,6 +551,7 @@
     <script src="{{asset('templates/js/isotope.min.js')}}"></script>
     <script src="{{asset('templates/js/images-loded.min.js')}}"></script>
     <script src="{{asset('templates/js/custom.js')}}"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
 	<script>
 	/* counter js */
 

@@ -121,6 +121,43 @@ class WelcomeController extends Controller
             "deskripsi"=>"Pembelajaran TIK/Komputer",
             "gambar"=>"tik.jpeg"
         ],
+
+        [
+            "deskripsi"=>"Terapi Akupresur",
+            "gambar"=>"terapi-akupresure.jpeg"
+        ],
+        [
+            "deskripsi"=>"Terapi Bina Bicara",
+            "gambar"=>"terapi-bina-bicara.jpeg"
+        ],
+        [
+            "deskripsi"=>"Terapi Okupasi",
+            "gambar"=>"terapi-okupasi.jpeg"
+        ],
+        [
+            "deskripsi"=>"Terapi Perilaku",
+            "gambar"=>"terapi-perilaku.jpeg"
+        ],
+        [
+            "deskripsi"=>"Terapi Sensorik",
+            "gambar"=>"terapi-sensorik.jpeg"
+        ],
+        [
+            "deskripsi"=>"Menari",
+            "gambar"=>"menari.jpeg"
+        ],
+        [
+            "deskripsi"=>"Olahraga",
+            "gambar"=>"olahraga.jpeg"
+        ],
+        [
+            "deskripsi"=>"Pramuka",
+            "gambar"=>"pramuka.jpeg"
+        ],
+        [
+            "deskripsi"=>"Tata Boga",
+            "gambar"=>"tata-boga.jpeg"
+        ],
     ],
     'blog'=>[
         [
@@ -137,6 +174,20 @@ class WelcomeController extends Controller
             "judul"=>"Pembelajaran Hidroponik: Bertani Modern Tanpa Tanah",
             "deskripsi"=>"Hidroponik adalah metode bercocok tanam yang semakin populer karena tidak memerlukan tanah. Tanaman ditumbuhkan menggunakan larutan nutrisi yang kaya akan minera",
             "gambar"=>"hidroponik.jpeg"
+        ],
+    ],
+    'video'=>[
+        [
+            "file"=>"pengimbasan.mp4",
+            "type"=>"local"
+        ],
+        [
+            "file"=>"https://www.instagram.com/p/DDtQt5mSMyI/?igsh=MWV5bGVtcnYxemt3aA==",
+            "type"=>"instagram"
+        ],
+        [
+            "file"=>"ACLLqX7aFVE?si=1VBIfKWoPAXrGt1P",
+            "type"=>"youtube"
         ],
         ]
     ];
