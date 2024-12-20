@@ -62,10 +62,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="{{url('/')}}">Beranda</a></li>
-                        <li><a class="nav-link" href="#">Profil</a></li>
-                        <li><a class="nav-link" href="#">Galleri</a></li>
-                        <li><a class="nav-link" href="#">Informasi Terkini</a></li>
-						<li><a class="nav-link" href="#">Kontak Kami</a></li>
+                        <li><a class="nav-link" href="#box-profil">Profil</a></li>
+                        <li><a class="nav-link" href="#box-kegiatan">Galleri</a></li>
+                        <li><a class="nav-link" href="#box-info">Informasi Terkini</a></li>
+						<li><a class="nav-link" href="#box-info">Kontak Kami</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -186,7 +186,7 @@
     </div>
 	<!-- end section -->
 	<!-- section -->
-    <div class="section layout_padding">
+    <div class="section layout_padding" id="box-kegiatan">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -281,7 +281,7 @@
     </div> --}}
 	<!-- end section -->
 	<!-- section -->
-    <div class="section layout_padding padding_bottom-0">
+    <div class="section layout_padding padding_bottom-0" id="box-info">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -384,7 +384,7 @@
         </div>
 	<!-- end section -->
     <!-- Start Footer -->
-    <footer class="footer-box">
+    <footer class="footer-box" id="box-profil">
         <div class="container">
 
 		   <div class="row">
