@@ -182,11 +182,39 @@ class WelcomeController extends Controller
             "type"=>"local"
         ],
         [
+            "file"=>"pengimbasan-pelatihan.mp4",
+            "type"=>"local"
+        ],
+        [
+            "file"=>"pengimbasan-kombel.mp4",
+            "type"=>"local"
+        ],
+        [
+            "file"=>"video-3.mp4",
+            "type"=>"local"
+        ],
+        [
+            "file"=>"video-4.mp4",
+            "type"=>"local"
+        ],
+        [
             "file"=>"https://www.instagram.com/p/DDtQt5mSMyI/?igsh=MWV5bGVtcnYxemt3aA==",
             "type"=>"instagram"
         ],
         [
+            "file"=>"https://www.instagram.com/share/BAI56EuD8q",
+            "type"=>"instagram"
+        ],
+        [
             "file"=>"ACLLqX7aFVE?si=1VBIfKWoPAXrGt1P",
+            "type"=>"youtube"
+        ],
+        [
+            "file"=>"7j-Lq3BCgcQ?si=tLgdoacQf9W-fMUV",
+            "type"=>"youtube"
+        ],
+        [
+            "file"=>"UW4udCiacj4?si=jCZgSY48FxU2jsci",
             "type"=>"youtube"
         ],
         ]
