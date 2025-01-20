@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="commentApp">
 <!-- Basic -->
 
 <head>
@@ -36,9 +36,86 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .comment-section {
+    max-height: 1000px;
+    overflow-y: auto;
+    padding-right: 10px; /* Untuk mencegah isi komentar menyentuh scrollbar */
+    margin-bottom: 50px
+}
+
+ /* Popup Box at Bottom Right */
+.popup-box-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 9999;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Popup Content */
+.popup-box h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.popup-box p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.popup-box .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.popup-box .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Show Popup */
+.popup-box-bottom-right.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+    </style>
+
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" ng-controller="CommentController">
 
     <!-- LOADER -->
     {{-- <div id="preloader">
@@ -84,53 +161,34 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="pogoSlider" id="js-main-slider">
-                    <div class="pogoSlider-slide" style="background-image:url({{asset('gambar/banner6.jpg')}});background-position:center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="slide_text">
+                   @if (count($banner)>0)
+                        @foreach ($banner as $row)
+                        <div class="pogoSlider-slide" style="background-image:url({{asset('gambar/'.$row->gambar)}});background-position:center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="slide_text">
 
-                                        <div style="display: flex;gap:100px;">
-                                        <img src="{{asset('gambar/logo/logo.png')}}" style="width:150px"/>
-                                       <div style=" background-color: rgba(0,0,0,0.7);color: black;padding: 0 5px; border-radius:5px">
-                                        <h4>Official Website</h4>
-                                        <h3><span span class="theme_color"  style="color: white;"> SLBN GUNUNGSARI
-                                          </span><br>BAURENO, BOJONEGORO  </h3>
-                                       </div>
-                                      </div>
-
-                                        <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Daftar Sekarang</a>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   <div class="pogoSlider-slide" style="background-image:url({{asset('gambar/banner7.jpg')}});background-position:center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="slide_text">
-                                        <div style="display: flex;gap:100px">
+                                            <div style="display: flex;gap:100px;">
                                             <img src="{{asset('gambar/logo/logo.png')}}" style="width:150px"/>
-                                            <div style=" background-color: rgba(0,0,0,0.7);color: black;padding: 0 5px; border-radius:5px" >
-                                            <h4>Official Website</h4>
-                                            <h3><span span class="theme_color"  style="color: white"> SLBN GUNUNGSARI
-                                            </span><br>BAURENO, BOJONEGORO  </h3>
+                                           <div style=" background-color: rgba(0,0,0,0.7);color: black;padding: 0 5px; border-radius:5px">
+                                            <h4>{{$row->text1}}</h4>
+                                            <h3><span span class="theme_color"  style="color: white;"> {{$row->text2}}
+                                              </span><br>{{$row->text3}}  </h3>
                                            </div>
                                           </div>
 
-                                        <br>
-                                        <div class="full center">
-										    <a class="contact_bt" href="#">Daftar Sekarang</a>
-										</div>
+                                            <br>
+                                            <div class="full center">
+                                                <a class="contact_bt" href="#">Daftar Sekarang</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        @endforeach
+                   @endif
 
                 </div>
                 <!-- .pogoSlider -->
@@ -414,6 +472,98 @@
         </div>
 	<!-- end section -->
 	<!-- section -->
+
+    <div class="section layout_padding padding_bottom-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <!-- Comment Form -->
+                                <div class="card mb-2">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5>Tulis Komentar</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form ng-submit="submitComment()">
+                                            <div class="mb-1">
+                                                <label for="name" class="form-label">Nama</label>
+                                                <input type="text" class="form-control" id="name" ng-model="newComment.name" placeholder="Nama" required>
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="comment" class="form-label">Komen</label>
+                                                <textarea class="form-control" id="comment" ng-model="newComment.comment" rows="3" placeholder="Tulis komentar" required></textarea>
+                                            </div>
+                                            <input type="hidden" ng-model="newComment.parent_id">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Comments Section -->
+                                <div class="card">
+                                    <div class="card-header bg-secondary text-white">
+                                        <h5>Komentar</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-muted text-center" ng-if="comments.length === 0">
+                                            No comments yet. Be the first to comment!
+                                        </p>
+                                        <div ng-repeat="comment in comments" class="d-flex mb-1">
+                                            <!-- Avatar -->
+                                            <div class="me-3">
+                                                <img src="https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" alt="Avatar" class="rounded-circle" width="50" height="50">
+                                            </div>
+                                            <!-- Comment Content -->
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                                    <strong>@{{ comment.name }}</strong>
+                                                    <small class="text-muted">@{{ comment.timestamp | date: 'short' }}</small>
+                                                </div>
+                                                <p>@{{ comment.comment }}</p>
+                                                <div>
+                                                    <button class="btn btn-sm btn-outline-primary me-2" ng-click="reply(comment.id)">Reply</button>
+                                                    {{-- <button class="btn btn-sm btn-outline-secondary">Like</button> --}}
+                                                </div>
+                                                <!-- Replies -->
+                                                <div class="mt-2 ps-4 border-start" ng-if="comment.replies.length > 0">
+                                                    <div ng-repeat="reply in comment.replies" class="d-flex mb-3">
+                                                        <!-- Avatar for Reply -->
+                                                        <div class="me-3">
+                                                            <img src="https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" alt="Avatar" class="rounded-circle" width="40" height="40">
+                                                        </div>
+                                                        <!-- Reply Content -->
+                                                        <div class="flex-grow-1">
+                                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                <strong>@{{ reply.name }}</strong>
+                                                                <small class="text-muted">@{{ reply.timestamp | date: 'short' }}</small>
+                                                            </div>
+                                                            <p>@{{ reply.comment }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+			  </div>
+           </div>
+        </div>
+	<!-- end section -->
+	<!-- section -->
     <div class="section layout_padding padding_bottom-0">
         <div class="container">
             <div class="row">
@@ -427,9 +577,7 @@
 			  </div>
            </div>
         </div>
-	<!-- end section -->
-	<!-- section -->
-    <div class="section contact_section" style="background:#12385b;">
+    <div class="section contact_section mt-5" style="background:#12385b;">
         <div class="container">
                <div class="row">
                  <div class="col-lg-6 col-md-6 col-sm-12">
@@ -531,6 +679,18 @@
                 <div class="col-12">
                     <p class="crp">© Copyrights 2019 design by html.design</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="adPopup" class="popup-box-bottom-right">
+        <div class="popup-box">
+            <button class="close-btn" onclick="closePopup()">×</button>
+            <div class="popup-content">
+                <h5>Promo awal tahun!</h5>
+                <p>Silahkan cek shopee kami, klink link berikut</p>
+                <a href="https://shopee.co.id/" class="btn btn-primary">Buka Shopee</a>
             </div>
         </div>
     </div>
@@ -654,6 +814,63 @@ jQuery(function ($) {
   }
 });
 	</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script>
+    // AngularJS App
+    const app = angular.module('commentApp', []);
+
+    app.controller('CommentController', ['$scope', '$http', function ($scope, $http) {
+        $scope.comments = []; // Array to store comments
+        $scope.newComment = {
+            name: '',
+            comment: '',
+            parent_id: null
+        };
+
+        // Fetch comments from the server
+        $scope.fetchComments = function () {
+            $http.get('/api/comments').then(function (response) {
+                $scope.comments = response.data;
+            }, function (error) {
+                console.error('Error fetching comments:', error);
+            });
+        };
+
+        // Submit new comment
+        $scope.submitComment = function () {
+            $http.post('/api/comments', $scope.newComment).then(function (response) {
+                $scope.fetchComments(); // Refresh comments
+                $scope.newComment = { name: '', comment: '', parent_id: null }; // Reset form
+            }, function (error) {
+                console.error('Error submitting comment:', error);
+            });
+        };
+
+        // Reply to a comment
+        $scope.reply = function (parentId) {
+            $scope.newComment.parent_id = parentId; // Set parent_id for reply
+            document.getElementById('name').focus(); // Focus on the name input
+        };
+
+        // Initialize comments
+        $scope.fetchComments();
+    }]);
+
+    // Function to show the popup
+function showPopup() {
+    document.getElementById('adPopup').classList.add('show');
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById('adPopup').classList.remove('show');
+}
+
+// Automatically show the popup after 3 seconds (optional)
+setTimeout(showPopup, 3000);
+</script>
 </body>
 
 </html>
